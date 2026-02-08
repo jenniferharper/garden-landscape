@@ -20,13 +20,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Handle copy email
   const emailLinks = document.querySelectorAll('.email-link')
+
   emailLinks.forEach((link) => {
-    link.addEventListener('copy', function (e) {
+    // 1. Handle Manual Copy (Long-press -> Copy)
+    link.addEventListener('copy', (e) => {
       e.preventDefault()
-      const cleanEmail = link.innerText || link.textContent
+      // Get only the text content, ignore the mailto: in the href
+      const cleanEmail = link.textContent.trim()
       if (e.clipboardData) {
         e.clipboardData.setData('text/plain', cleanEmail)
       }
+    })
+
+    // 2. Handle Click/Tap (Optional: provides "Copied" feedback + stays a link)
+    link.addEventListener('click', function (e) {
+      // We let the default mailto: happen, but we also copy the clean version
+      const cleanEmail = link.textContent.trim()
+      navigator.clipboard.writeText(cleanEmail)
+
+      // Provide visual feedback
+      link.classList.add('copied')
+      setTimeout(() => link.classList.remove('copied'), 2000)
+
+      // Default mailto behavior continues...
     })
   })
 

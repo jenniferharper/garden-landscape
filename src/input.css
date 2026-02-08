@@ -130,3 +130,29 @@ section {
     z-index: -1;
   }
 }
+
+.email-link {
+  position: relative;
+  cursor: pointer;
+}
+
+/* The "Copied" feedback bubble */
+.email-link::after {
+  content: 'Copied!';
+  position: absolute;
+  top: -1.5em;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4a5d23; /* Your moss color */
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.email-link.copied::after {
+  opacity: 1;
+}
