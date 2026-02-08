@@ -169,8 +169,14 @@
   }
 }
 @layer utilities {
+  .visible {
+    visibility: visible;
+  }
   .absolute {
     position: absolute;
+  }
+  .fixed {
+    position: fixed;
   }
   .relative {
     position: relative;
@@ -198,6 +204,24 @@
   }
   .z-2 {
     z-index: 2;
+  }
+  .container {
+    width: 100%;
+    @media (width >= 40rem) {
+      max-width: 40rem;
+    }
+    @media (width >= 48rem) {
+      max-width: 48rem;
+    }
+    @media (width >= 64rem) {
+      max-width: 64rem;
+    }
+    @media (width >= 80rem) {
+      max-width: 80rem;
+    }
+    @media (width >= 96rem) {
+      max-width: 96rem;
+    }
   }
   .my-\[2em\] {
     margin-block: 2em;
@@ -232,8 +256,17 @@
   .mb-\[1em\] {
     margin-bottom: 1em;
   }
+  .block {
+    display: block;
+  }
   .flex {
     display: flex;
+  }
+  .grid {
+    display: grid;
+  }
+  .hidden {
+    display: none;
   }
   .h-\[20vw\] {
     height: 20vw;
@@ -535,26 +568,6 @@
       rotate: -25deg;
     }
   }
-  .md\:rotate-\[-40deg\] {
-    @media (width >= 48rem) {
-      rotate: -40deg;
-    }
-  }
-  .md\:rotate-\[-90deg\] {
-    @media (width >= 48rem) {
-      rotate: -90deg;
-    }
-  }
-  .md\:rotate-\[40deg\] {
-    @media (width >= 48rem) {
-      rotate: 40deg;
-    }
-  }
-  .md\:rotate-none {
-    @media (width >= 48rem) {
-      rotate: none;
-    }
-  }
   .md\:flex-row {
     @media (width >= 48rem) {
       flex-direction: row;
@@ -593,6 +606,16 @@
   .md\:py-\[25vh\] {
     @media (width >= 48rem) {
       padding-block: 25vh;
+    }
+  }
+  .md\:ps-10 {
+    @media (width >= 48rem) {
+      padding-inline-start: calc(var(--spacing) * 10);
+    }
+  }
+  .md\:pe-10 {
+    @media (width >= 48rem) {
+      padding-inline-end: calc(var(--spacing) * 10);
     }
   }
   .md\:pe-\[3vw\] {
@@ -650,11 +673,6 @@
       rotate: -45deg;
     }
   }
-  .lg\:rotate-\[-55deg\] {
-    @media (width >= 64rem) {
-      rotate: -55deg;
-    }
-  }
   .lg\:items-end {
     @media (width >= 64rem) {
       align-items: flex-end;
@@ -663,6 +681,11 @@
   .lg\:items-start {
     @media (width >= 64rem) {
       align-items: flex-start;
+    }
+  }
+  .lg\:px-\[6vw\] {
+    @media (width >= 64rem) {
+      padding-inline: 6vw;
     }
   }
   .lg\:pe-\[2vw\] {
