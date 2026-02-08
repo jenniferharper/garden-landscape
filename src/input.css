@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-main: #fcfcf5;
+  --color-dark: #222224;
+  --color-leaf: #9bc349; /* Fresh primary green */
+  --color-moss: #4a5d23; /* Darker, earthy accent */
+  --color-mist: #c4ceb1; /* Very light green-tinted background */
+}
+
+@layer base {
+  h1 {
+    font-size: clamp(3rem, 9vw, 16rem);
+    font-weight: 800;
+    line-height: 1.1;
+  }
+  h2 {
+    font-size: clamp(2.4rem, 6vw, 12rem);
+    font-weight: 600;
+    line-height: 1.1;
+  }
+
+  h3,
+  .h3-style {
+    font-size: clamp(1.3rem, 4vw, 8rem);
+    font-weight: 600;
+    line-height: 1.1;
+  }
+
+  p {
+    /* Fluid body text is often better than "snapping" it */
+    font-size: clamp(1rem, 0.5vw + 0.8rem, 1.5rem);
+    line-height: 1.6;
+  }
+  .bigger {
+    font-size: clamp(1.5rem, 0.7vw + 0.9rem, 2rem);
+    line-height: 2;
+  }
+
+  /* Specific 4K adjustment if you want to change more than just size */
+  @media (min-width: 2560px) {
+    p {
+      font-size: 1.75rem; /* Larger body text for huge screens */
+    }
+  }
+
+  ul li {
+    line-height: 1.7em;
+    text-wrap: pretty;
+  }
+}
+
+body {
+  background-color: var(--color-main);
+  color: var(--main-dark);
+  font-family: 'Google Sans', sans-serif;
+}
+main {
+  overflow-x: hidden;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+a:focus,
+a:active {
+  outline: none;
+  box-shadow: none;
+}
+section {
+  position: relative;
+}
+
+.media-box {
+  position: relative;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 1px;
+    left: 0;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: 50% 50%;
+    object-position: 50% 50%;
+  }
+}
+
+/* masked image */
+.container-arch {
+  width: 100%; /* Or any responsive width like 50vw */
+  aspect-ratio: 333 / 473; /* Maintains your original shape's proportions */
+}
+
+.masked-element {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  /* Link to the ID in the HTML above */
+  -webkit-mask-image: url(#responsiveMask);
+  mask-image: url(#responsiveMask);
+}
+
+/* slider */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+/* after-section background block */
+
+.after-section {
+  position: relative;
+  z-index: 0;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -10vw;
+    width: calc(100% + 20vw);
+    height: 100%;
+    background-color: var(--color-mist);
+    z-index: -1;
+  }
+}
