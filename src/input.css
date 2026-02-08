@@ -109,7 +109,7 @@ section {
   height: 100%;
 }
 .swiper-pagination-bullet-active {
-  background-color: var(--color-moss);
+  background-color: var(--color-moss) !important;
 }
 
 /* after-section background block */

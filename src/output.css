@@ -358,6 +358,9 @@
   .text-\[1em\] {
     font-size: 1em;
   }
+  .text-balance {
+    text-wrap: balance;
+  }
   .text-leaf {
     color: var(--color-leaf);
   }
@@ -527,9 +530,39 @@
       max-width: 100%;
     }
   }
+  .md\:rotate-\[-25deg\] {
+    @media (width >= 48rem) {
+      rotate: -25deg;
+    }
+  }
+  .md\:rotate-\[-40deg\] {
+    @media (width >= 48rem) {
+      rotate: -40deg;
+    }
+  }
+  .md\:rotate-\[-90deg\] {
+    @media (width >= 48rem) {
+      rotate: -90deg;
+    }
+  }
+  .md\:rotate-\[40deg\] {
+    @media (width >= 48rem) {
+      rotate: 40deg;
+    }
+  }
   .md\:rotate-none {
     @media (width >= 48rem) {
       rotate: none;
+    }
+  }
+  .md\:flex-row {
+    @media (width >= 48rem) {
+      flex-direction: row;
+    }
+  }
+  .md\:justify-between {
+    @media (width >= 48rem) {
+      justify-content: space-between;
     }
   }
   .md\:justify-end {
@@ -610,6 +643,11 @@
   .lg\:max-w-\[95\%\] {
     @media (width >= 64rem) {
       max-width: 95%;
+    }
+  }
+  .lg\:rotate-\[-45deg\] {
+    @media (width >= 64rem) {
+      rotate: -45deg;
     }
   }
   .lg\:rotate-\[-55deg\] {
@@ -760,7 +798,7 @@ section {
   height: 100%;
 }
 .swiper-pagination-bullet-active {
-  background-color: var(--color-moss);
+  background-color: var(--color-moss) !important;
 }
 .after-section {
   position: relative;
