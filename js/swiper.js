@@ -16,10 +16,26 @@ var swiper = new Swiper('.swiper', {
 document.addEventListener('DOMContentLoaded', function () {
   // Update year
   const yearEl = document.getElementById('year')
-  if (yearEl)
-    yearEl.textContent = new Date().getFullYear()
+  if (yearEl) yearEl.textContent = new Date().getFullYear()
 
-    // Handle multiple contact links
+  //handle copy email
+  const emailLinks = document.querySelectorAll('.email-link')
+  emailLinks.forEach((link) => {
+    link.addEventListener('copy', function (e) {
+      // Prevent the default copy behavior (which includes mailto:)
+      e.preventDefault()
+
+      // Get the actual visible text of the link
+      const cleanEmail = link.innerText || link.textContent
+
+      // Manually push the clean text to the clipboard
+      if (e.clipboardData) {
+        e.clipboardData.setData('text/plain', cleanEmail)
+      }
+    })
+  })
+
+  // Handle multiple contact links
   ;(function () {
     const contactLinks = document.querySelectorAll('.contact-link')
     const phoneNum = '6421123456789'
