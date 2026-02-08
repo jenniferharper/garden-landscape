@@ -9,13 +9,15 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --spacing: 0.25rem;
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25 / 0.875);
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --color-main: #fcfcf5;
     --color-dark: #2f3b16;
-    --color-leaf: #9bc349;
+    --color-leaf: #7b9b3a;
     --color-moss: #4a5d23;
     --color-mist: #e3ead4;
   }
@@ -169,6 +171,9 @@
   }
 }
 @layer utilities {
+  .pointer-events-none {
+    pointer-events: none;
+  }
   .visible {
     visibility: visible;
   }
@@ -198,6 +203,9 @@
   }
   .bottom-\[-20vw\] {
     bottom: -20vw;
+  }
+  .left-0 {
+    left: calc(var(--spacing) * 0);
   }
   .left-\[65\%\] {
     left: 65%;
@@ -259,6 +267,9 @@
   .mb-5 {
     margin-bottom: calc(var(--spacing) * 5);
   }
+  .mb-6 {
+    margin-bottom: calc(var(--spacing) * 6);
+  }
   .mb-\[1em\] {
     margin-bottom: 1em;
   }
@@ -280,6 +291,9 @@
   .h-\[25vw\] {
     height: 25vw;
   }
+  .h-auto {
+    height: auto;
+  }
   .w-5 {
     width: calc(var(--spacing) * 5);
   }
@@ -300,6 +314,9 @@
   }
   .w-\[110\%\] {
     width: 110%;
+  }
+  .w-\[150px\] {
+    width: 150px;
   }
   .w-full {
     width: 100%;
@@ -397,6 +414,10 @@
   .text-right {
     text-align: right;
   }
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
   .text-\[1em\] {
     font-size: 1em;
   }
@@ -414,6 +435,9 @@
   }
   .text-moss {
     color: var(--color-moss);
+  }
+  .underline {
+    text-decoration-line: underline;
   }
   .transition-colors {
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
@@ -434,17 +458,17 @@
       }
     }
   }
+  .hover\:text-dark {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-dark);
+      }
+    }
+  }
   .hover\:text-leaf {
     &:hover {
       @media (hover: hover) {
         color: var(--color-leaf);
-      }
-    }
-  }
-  .hover\:text-main {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-main);
       }
     }
   }
@@ -468,6 +492,11 @@
   .md\:top-\[-6vw\] {
     @media (width >= 48rem) {
       top: -6vw;
+    }
+  }
+  .md\:right-auto {
+    @media (width >= 48rem) {
+      right: auto;
     }
   }
   .md\:bottom-\[-30\%\] {
@@ -665,6 +694,11 @@
       padding-bottom: 10vw;
     }
   }
+  .md\:no-underline {
+    @media (width >= 48rem) {
+      text-decoration-line: none;
+    }
+  }
   .lg\:top-\[-7vw\] {
     @media (width >= 64rem) {
       top: -7vw;
@@ -783,6 +817,7 @@
   }
   .bigger {
     font-size: clamp(1.5rem, 0.7vw + 0.9rem, 2rem);
+    font-weight: 400;
   }
   @media (min-width: 2560px) {
     p {

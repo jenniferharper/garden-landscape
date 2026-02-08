@@ -4,7 +4,7 @@
 @theme {
   --color-main: #fcfcf5;
   --color-dark: #2f3b16;
-  --color-leaf: #9bc349; /* Fresh primary green */
+  --color-leaf: #7b9b3a; /* Fresh primary green */
   --color-moss: #4a5d23; /* Darker, earthy accent */
   --color-mist: #e3ead4; /* Very light green-tinted background */
 }
@@ -35,6 +35,7 @@
   }
   .bigger {
     font-size: clamp(1.5rem, 0.7vw + 0.9rem, 2rem);
+    font-weight: 400;
   }
 
   /* Specific 4K adjustment if you want to change more than just size */

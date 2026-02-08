@@ -2,11 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="description" content="Template base" />
+    <meta name="description" content="" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta property="image" content="" />
-    <title>Template</title>
+    <title>Wellkept Gardens</title>
     <link rel="icon" href="img/favicon.png" type="image/x-icon" />
 
     <link href="src/output.css" rel="stylesheet" />
@@ -15,8 +15,9 @@
   </head>
 
   <body class="text-[1em]">
-    <nav class="px-[2em] py-[1em] md:px-[4vw] md:flex flex-row justify-between">
-      <svg class="w-[50] md:w-[20vw]" viewBox="0 0 269 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <nav aria-label="Main Navigation" class="px-[2em] py-[1em] md:px-[4vw] md:flex flex-row justify-between">
+      <svg role="img" class="w-[50] md:w-[20vw]" viewBox="0 0 269 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <title id="logo-title">Wellkept Gardens</title>
         <path d="M261.78 31.9786C267.633 24.7232 266.702 13.8196 265.505 9.27472C248.566 20.4846 246.103 29.4065 249.041 33.4967C250.848 36.0137 255.926 39.2339 261.78 31.9786Z" fill="#9bc349" />
         <path d="M9.72 42.96L0 12.36H8.82L14.1 32.22H14.52L20.64 12.36H28.68L34.8 32.22H35.22L40.5 12.36H49.2L39.42 42.96H30.96L24.72 23.16H24.3L18.12 42.96H9.72Z" fill="#4A5D23" />
         <path
@@ -39,14 +40,15 @@
           fill="#4A5D23"
         />
       </svg>
+
       <div class="flex flex-row justify-center md:justify-end items-center">
         <p class="me-5">
-          <a href="https://wa.me/6421123456789" class="flex flex-row justify-end transition-colors hover:text-leaf fill-moss hover:fill-leaf md:pointer-events-none md:cursor-default contact-link">
-            <svg class="w-5 md:w-[2vw] me-1" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <a href="https://wa.me/6421123456789" aria-label="Contact us on WhatsApp at 021 123 456 789" class="contact-link flex flex-row justify-end transition-colors hover:text-leaf fill-moss hover:fill-leaf md:pointer-events-none md:cursor-default">
+            <svg aria-hidden="true" focusable="false" class="w-5 md:w-[2vw] me-1" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#clip0_24_29)">
                 <path
                   d="M16.61 3.35187C14.9287 1.67062 12.6063 0.630615 10.0406 0.630615C4.91 0.630615 0.75 4.78999 0.75 9.92124C0.75 11.6287 1.21062 13.2281 2.01375 14.6031L1.99 14.5594L0.671875 19.3731L5.59625 18.0812C6.87813 18.7931 8.4075 19.2119 10.035 19.2119H10.0388C15.1694 19.21 19.3275 15.05 19.3275 9.91936C19.3275 7.35499 18.2888 5.03374 16.6094 3.35249L16.61 3.35187ZM10.0388 17.6425H10.0356C8.58625 17.6425 7.22937 17.2425 6.07125 16.5469L6.10625 16.5662L5.82438 16.3994L2.9025 17.1662L3.68187 14.3169L3.49813 14.025C2.7575 12.8612 2.3175 11.4431 2.3175 9.92186C2.3175 5.65811 5.77438 2.20124 10.0381 2.20124C14.3019 2.20124 17.7587 5.65811 17.7587 9.92186C17.7587 14.1856 14.3031 17.6425 10.0388 17.6425ZM14.2737 11.8606C14.0419 11.7444 12.9006 11.1837 12.6881 11.1056C12.475 11.0281 12.32 10.99 12.165 11.2225C12.0112 11.4544 11.5662 11.9769 11.4306 12.1319C11.2956 12.2875 11.1594 12.3062 10.9275 12.1906C10.2087 11.8994 9.59125 11.5112 9.05438 11.0331L9.06062 11.0387C8.56125 10.5762 8.13313 10.0469 7.7875 9.46311L7.77 9.43061C7.635 9.19874 7.75563 9.07311 7.87125 8.95749C7.97563 8.85374 8.10375 8.68624 8.21938 8.55124C8.31063 8.43936 8.38875 8.31124 8.44813 8.17374L8.45187 8.16311C8.47875 8.10874 8.49437 8.04561 8.49437 7.97811C8.49437 7.89624 8.47125 7.81999 8.43125 7.75499L8.4325 7.75686C8.37375 7.64061 7.91 6.49811 7.71688 6.03311C7.52813 5.58061 7.33625 5.64249 7.19437 5.63499C7.05937 5.62874 6.90437 5.62749 6.74937 5.62749C6.5025 5.63374 6.28313 5.74499 6.13188 5.91686L6.13125 5.91811C5.63 6.39374 5.31875 7.06436 5.31875 7.80749C5.31875 7.82374 5.31875 7.84061 5.31937 7.85686V7.85436C5.40125 8.77124 5.745 9.59436 6.27375 10.265L6.26625 10.2556C7.26875 11.7425 8.605 12.9319 10.1731 13.7331L10.2319 13.76C10.5744 13.915 11.0131 14.0806 11.4619 14.2225L11.555 14.2481C11.8313 14.3356 12.1494 14.3862 12.4794 14.3862C12.6687 14.3862 12.855 14.3694 13.035 14.3375L13.0156 14.34C13.6838 14.2006 14.2381 13.7975 14.5762 13.2469L14.5819 13.2362C14.685 13.0075 14.745 12.7406 14.745 12.46C14.745 12.3444 14.735 12.2312 14.7156 12.1212L14.7175 12.1331C14.66 12.0362 14.505 11.9787 14.2725 11.8619L14.2737 11.8606Z"
-                  fill=""
+                  fill="currentColor"
                 />
               </g>
               <defs>
@@ -55,7 +57,7 @@
                 </clipPath>
               </defs>
             </svg>
-            <span class="">021 123456789</span>
+            <span>021 123456789</span>
           </a>
         </p>
         <p class="hover:text-leaf transition-colors text-right mb-1">
@@ -65,12 +67,13 @@
     </nav>
 
     <main class="px-[2em] md:px-[4vw]">
+      <!-- hero -->
       <section class="py-[10vh] md:py-[25vh] flex flex-col flex-wrap content-center items-center justify-center text-center">
         <h1 class="text-leaf mb-[1em] md:mb-[1vw]">Reliable, no‑drama garden maintenance</h1>
-
         <p>For homeowners and rental properties in Wellington’s northern and western suburbs</p>
       </section>
 
+      <!-- first intro -->
       <section class="bg-moss md:flex flex-col p-[2em] md:p-[5vw]" id="vine-trigger">
         <div class="md:flex flex-row items-center">
           <div class="w-full pb-[2em] md:pe-[4vw] md:pb-0 lg:pe-[2vw] text-mist">
@@ -86,9 +89,9 @@
 
           <div class="w-full flex flex-col items-end relative">
             <div class="container-arch max-w-[90vw] lg:max-w-[80%] relative">
-              <img src="img/from_street.webp" alt="Description" class="masked-element" />
+              <img src="img/from_street.webp" alt="Wellkept garden landscape viewed from the street" class="masked-element w-full h-auto" loading="eager" fetchpriority="high" />
 
-              <svg id="start-leaf" class="w-[110%] absolute bottom-[-5%] left:0" viewBox="0 0 560 341" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg id="start-leaf" class="w-[110%] absolute bottom-[-5%] left-0 pointer-events-none" viewBox="0 0 560 341" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                 <path d="M489.821 64.9706C466.795 81.1713 459.823 109.439 459.216 121.547C517.219 99.6981 532.085 77.868 527.348 66.2214C524.434 59.0542 512.848 48.77 489.821 64.9706Z" fill="#99A77C" />
                 <path d="M347.191 169.455C344.359 186.145 358.171 199.314 365.43 203.812C384.469 168.357 379.158 153.632 369.17 151.862C363.024 150.772 350.024 152.766 347.191 169.455Z" fill="#99A77C" />
                 <path d="M392.056 211.205C375.295 211.911 360.387 201.854 355.029 196.738C389.269 186.623 404.876 191.167 407.733 197.897C409.491 202.039 408.817 210.499 392.056 211.205Z" fill="#99A77C" />
@@ -107,7 +110,7 @@
                 <path d="M1.97858 289.016C159.645 313.349 486.979 324.016 534.979 172.016" stroke="#9BC349" stroke-width="2" stroke-linecap="round" />
               </svg>
 
-              <svg class="hidden" id="leaf-end" viewBox="0 0 560 341" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg id="leaf-end" class="hidden w-[110%] absolute bottom-[-5%] left-0 pointer-events-none" viewBox="0 0 560 341" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                 <path d="M455.569 20.8153C428.378 44.9233 422.261 82.5212 422.601 98.3066C492.811 62.1688 509.335 31.8577 502.387 17.39C498.11 8.48678 482.76 -3.29264 455.569 20.8153Z" fill="#99A77C" />
                 <path d="M300.895 143.151C298.708 164.148 320.341 178.522 331.431 183.084C355.035 136.699 345.596 119.242 330.851 118.421C321.777 117.915 303.083 122.154 300.895 143.151Z" fill="#99A77C" />
                 <path d="M375.125 189.195C350.807 192.358 327.939 181.977 319.545 176.392C368.218 159.221 391.464 162.698 396.403 170.618C399.443 175.493 399.443 186.032 375.125 189.195Z" fill="#99A77C" />
@@ -122,7 +125,7 @@
                 <path d="M322.026 320.933C295.402 317.689 284.176 302.459 281.891 295.249C346.387 291.859 365.116 300.889 361.669 309.356C359.548 314.567 348.649 324.177 322.026 320.933Z" fill="#99A77C" />
                 <path d="M287.342 268.613C272.372 282.71 281.934 298.924 288.586 305.269C337.736 279.455 340.54 264.54 328.424 259.78C320.968 256.851 302.313 254.516 287.342 268.613Z" fill="#99A77C" />
                 <path d="M178.271 317.739C157.361 315.158 159.025 306.542 162.471 302.557C221.632 302.702 231.24 308.181 221.813 312.673C216.011 315.438 199.181 320.321 178.271 317.739Z" fill="#99A77C" />
-                <path d="M175.133 276.67C159.458 287.225 158.287 303.015 159.661 309.59C202.048 293.225 210.428 280.282 204.911 274.377C201.517 270.744 190.808 266.116 175.133 276.67Z" fill="#99A77C" />
+                <path d="M175.133 276.67C159.458 287.225 159.287 303.015 159.661 309.59C202.048 293.225 210.428 280.282 204.911 274.377C201.517 270.744 190.808 266.116 175.133 276.67Z" fill="#99A77C" />
                 <path d="M2.99994 287C160.667 311.333 488 322 536 170" stroke="#9BC349" stroke-width="2" stroke-linecap="round" />
               </svg>
             </div>
@@ -130,8 +133,9 @@
         </div>
       </section>
 
+      <!-- slider -->
       <section class="py-[25vh] xl:min-h-screen flex flex-col flex-wrap content-center items-center justify-center text-center overflow-hidden">
-        <p class="text-leaf">Fully equipped • Clear pricing • Reliable scheduling</p>
+        <p class="text-moss">Fully equipped • Clear pricing • Reliable scheduling</p>
         <div class="swiper">
           <!-- Additional required wrapper -->
           <div class="swiper-wrapper pb-[4em]">
@@ -149,19 +153,22 @@
         </div>
       </section>
 
-      <section id="bird-trigger">
-        <svg id="sun" viewBox="0 0 230 230" class="w-[25vw] h-[25vw] absolute right-0 top-[-3em] z-1 md:w-[15vw] md:h-[15vw] md:left-[3vw] md:top-[-6vw] md:right:none lg:top-[-7vw]">
+      <!-- bird and sun -->
+      <section id="bird-trigger" class="relative">
+        <svg id="sun" viewBox="0 0 230 230" class="w-[25vw] h-[25vw] absolute right-0 top-[-3em] z-1 md:w-[15vw] md:h-[15vw] md:left-[3vw] md:top-[-6vw] md:right-auto lg:top-[-7vw]" aria-hidden="true" focusable="false">
           <circle cx="114.53" cy="114.53" r="114.5" transform="rotate(16.9603 114.53 114.53)" fill="#BEB100" />
         </svg>
-        <svg id="bird" viewBox="0 0 154 52" class="w-[20vw] h-[20vw] md:w-[10vw] md:h-[10vw] z-2 absolute left-[65%] top-[-2vw] md:left-[14vw] bottom-[-20vw] md:top-0" fill="none">
+
+        <svg id="bird" viewBox="0 0 154 52" class="w-[20vw] h-[20vw] md:w-[10vw] md:h-[10vw] z-2 absolute left-[65%] top-[-2vw] md:left-[14vw] bottom-[-20vw] md:top-0" fill="none" aria-hidden="true" focusable="false">
           <path d="M25.9221 31.6918C38.6127 21.4967 68.0983 10.0279 84.5163 45.714C90.6003 31.7418 107.862 4.30312 128.239 6.32607" stroke="black" stroke-width="5" stroke-linecap="round" />
+        </svg>
+
+        <svg style="display: none" viewBox="0 0 154 52" aria-hidden="true" focusable="false">
+          <path id="wing-down-path" d="M4.75977 45.714C17.4503 35.5189 68.0983 10.0279 84.5163 45.714C90.6002 31.7418 128.383 29.6689 148.76 31.6919" />
         </svg>
       </section>
 
-      <svg style="display: none" viewBox="0 0 154 52">
-        <path id="wing-down-path" d="M4.75977 45.714C17.4503 35.5189 68.0983 10.0279 84.5163 45.714C90.6002 31.7418 128.383 29.6689 148.76 31.6919" />
-      </svg>
-
+      <!-- recent work -->
       <section class="bg-mist md:flex flex-col p-[2em] py-[6em] md:pt-[15vw] md:px-[5vw] md:pb-[10vw] lg:pt-[12vw] xl:pt-[8vw] after-section text-pretty" id="work-leaf-trigger">
         <div class="md:flex flex-row items-center">
           <div class="w-full pb-[2em] md:pe-[4vw] md:pb-0 lg:pe-[2vw]">
@@ -192,7 +199,16 @@
           </div>
 
           <div class="relative w-full md:w-[15%] xl:w-[20%]">
-            <svg class="w-[30%] rotate-[-77deg] md:rotate-[-25deg] md:w-[150%] md:bottom-[-30%] xl:w-[90%] xl:bottom-[-40%] absolute right-[-9vw] lg:rotate-[-45deg]" viewBox="0 0 265 559" fill="none" xmlns="http://www.w3.org/2000/svg" id="work-leaf">
+            <svg
+              class="w-[30%] rotate-[-77deg] md:rotate-[-25deg] md:w-[150%] md:bottom-[-30%] xl:w-[90%] xl:bottom-[-40%] absolute right-[-9vw] lg:rotate-[-45deg]"
+              viewBox="0 0 265 559"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              id="work-leaf"
+              aria-hidden="true"
+              focusable="false"
+              role="presentation"
+            >
               <path d="M196.212 117.594C190.313 140.109 167.027 154.402 156.122 158.734C153.533 108.087 167.806 89.9129 180.378 89.7505C188.114 89.6506 202.111 95.0795 196.212 117.594Z" fill="#99A77C" />
               <path d="M180.901 257.763C157.584 268.906 128.771 259.415 117.279 253.276C158.358 214.765 183.999 213.833 193.151 224.374C198.783 230.861 204.218 246.62 180.901 257.763Z" fill="#99A77C" />
               <path d="M86.4068 220.565C94.8139 243.013 120.171 255.213 131.799 258.507C129.136 206.344 112.605 189.222 99.7077 190.375C91.7711 191.085 77.9997 198.116 86.4068 220.565Z" fill="#99A77C" />
@@ -204,28 +220,29 @@
             </svg>
           </div>
         </div>
+        <svg class="hidden" id="end-leaf" viewBox="0 0 265 559" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="presentation">
+          <path d="M230.656 80.7664C219.423 123.638 175.083 150.853 154.318 159.101C149.389 62.6627 176.567 28.0571 200.505 27.748C215.235 27.5577 241.888 37.8951 230.656 80.7664Z" fill="#99A77C" />
+          <path d="M226.741 255.948C186.754 275.058 137.341 258.781 117.633 248.253C188.081 182.209 232.054 180.611 247.749 198.688C257.407 209.812 266.728 236.838 226.741 255.948Z" fill="#99A77C" />
+          <path d="M51.4328 184.104C66.9761 225.607 113.858 248.162 135.356 254.252C130.431 157.813 99.8682 126.157 76.0239 128.289C61.3505 129.601 35.8895 142.6 51.4328 184.104Z" fill="#99A77C" />
+          <path d="M218.775 348.491C190.57 382.677 138.901 388.746 116.591 387.508C152.633 297.922 191.834 277.936 213.687 287.712C227.134 293.727 246.979 314.305 218.775 348.491Z" fill="#99A77C" />
+          <path d="M29.5184 357.244C61.109 388.327 113.13 389.017 135.191 385.477C90.0714 300.101 49.0123 284.28 28.2888 296.264C15.5359 303.64 -2.07218 326.161 29.5184 357.244Z" fill="#99A77C" />
+          <path d="M232.037 442.619C208.779 480.343 158.426 493.43 136.157 495.257C159.596 401.58 195.692 376.416 218.677 383.108C232.821 387.226 255.296 404.894 232.037 442.619Z" fill="#99A77C" />
+          <path d="M45.7612 477.198C81.3095 503.663 132.935 497.225 154.304 490.698C97.9214 412.303 55.0829 402.251 36.1952 416.96C24.5721 426.012 10.2128 450.732 45.7612 477.198Z" fill="#99A77C" />
+          <path d="M181.489 557.123C138.585 491.071 75.9526 313.916 168.655 133.71" stroke="#9BC349" stroke-width="2" stroke-linecap="round" />
+        </svg>
       </section>
 
-      <svg class="hidden" id="end-leaf" viewBox="0 0 265 559" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M230.656 80.7664C219.423 123.638 175.083 150.853 154.318 159.101C149.389 62.6627 176.567 28.0571 200.505 27.748C215.235 27.5577 241.888 37.8951 230.656 80.7664Z" fill="#99A77C" />
-        <path d="M226.741 255.948C186.754 275.058 137.341 258.781 117.633 248.253C188.081 182.209 232.054 180.611 247.749 198.688C257.407 209.812 266.728 236.838 226.741 255.948Z" fill="#99A77C" />
-        <path d="M51.4328 184.104C66.9761 225.607 113.858 248.162 135.356 254.252C130.431 157.813 99.8682 126.157 76.0239 128.289C61.3505 129.601 35.8895 142.6 51.4328 184.104Z" fill="#99A77C" />
-        <path d="M218.775 348.491C190.57 382.677 138.901 388.746 116.591 387.508C152.633 297.922 191.834 277.936 213.687 287.712C227.134 293.727 246.979 314.305 218.775 348.491Z" fill="#99A77C" />
-        <path d="M29.5184 357.244C61.109 388.327 113.13 389.017 135.191 385.477C90.0714 300.101 49.0123 284.28 28.2888 296.264C15.5359 303.64 -2.07218 326.161 29.5184 357.244Z" fill="#99A77C" />
-        <path d="M232.037 442.619C208.779 480.343 158.426 493.43 136.157 495.257C159.596 401.58 195.692 376.416 218.677 383.108C232.821 387.226 255.296 404.894 232.037 442.619Z" fill="#99A77C" />
-        <path d="M45.7612 477.198C81.3095 503.663 132.935 497.225 154.304 490.698C97.9214 412.303 55.0829 402.251 36.1952 416.96C24.5721 426.012 10.2128 450.732 45.7612 477.198Z" fill="#99A77C" />
-        <path d="M181.489 557.123C138.585 491.071 75.9526 313.916 168.655 133.71" stroke="#9BC349" stroke-width="2" stroke-linecap="round" />
-      </svg>
-
+      <!-- 3 info points -->
       <section class="py-[20vh] flex flex-col flex-wrap content-center items-center justify-center text-center">
         <h2 class="mb-[1em] md:mb-[4vw]">Our straightforward approach</h2>
         <div class="flex flex-col md:flex-row md:justify-between text-balance">
-          <p class="bigger mb-5 md:pe-10">Reliable scheduling and clear communication.</p>
-          <p class="bigger mb-5">Understands rental and property requirements.</p>
-          <p class="bigger md:ps-10">Focus on keeping gardens tidy and manageable.</p>
+          <h3 class="bigger mb-5 md:pe-10">Reliable scheduling and clear communication.</h3>
+          <h3 class="bigger mb-5">Understands rental and property requirements.</h3>
+          <h3 class="bigger md:ps-10">Focus on keeping gardens tidy and manageable.</h3>
         </div>
       </section>
 
+      <!-- serviced areas -->
       <section class="bg-moss md:flex flex-col p-[2em] md:p-[5vw]" id="vine-trigger-other">
         <div class="md:flex flex-row items-center">
           <div class="w-full pb-[2em] md:pe-[4vw] md:pb-0 lg:pe-[2vw] text-mist">
@@ -251,7 +268,7 @@
           <div class="w-full flex flex-col items-end">
             <div class="container-arch max-w-[90vw] lg:max-w-[80%] relative">
               <img src="img/from_street.webp" alt="Description" class="masked-element" />
-              <svg id="start-leaf-other" class="w-[110%] absolute bottom-[-5%] right-0" viewBox="0 0 560 341" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg id="start-leaf-other" class="w-[110%] absolute bottom-[-5%] right-0" viewBox="0 0 560 341" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="presentation">
                 <path d="M68.4702 64.9706C91.4968 81.1713 98.4685 109.439 99.076 121.547C41.0725 99.6981 26.2069 77.868 30.9431 66.2214C33.8577 59.0542 45.4435 48.77 68.4702 64.9706Z" fill="#99A77C" />
                 <path d="M211.1 169.455C213.932 186.145 200.121 199.314 192.861 203.812C173.822 168.357 179.134 153.632 189.121 151.862C195.268 150.772 208.268 152.766 211.1 169.455Z" fill="#99A77C" />
                 <path d="M166.236 211.205C182.997 211.911 197.904 201.854 203.263 196.738C169.022 186.623 153.416 191.167 150.559 197.897C148.801 202.039 149.475 210.499 166.236 211.205Z" fill="#99A77C" />
@@ -272,7 +289,7 @@
             </div>
           </div>
         </div>
-        <svg class="hidden" id="leaf-end-other" viewBox="0 0 560 341" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg class="hidden" id="leaf-end-other" viewBox="0 0 560 341" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
           <path d="M103.722 20.8153C130.913 44.9233 137.031 82.5212 136.69 98.3066C66.4808 62.1688 49.9562 31.8577 56.9049 17.39C61.181 8.48678 76.531 -3.29264 103.722 20.8153Z" fill="#99A77C" />
           <path d="M258.396 143.151C260.584 164.148 238.951 178.522 227.861 183.084C204.256 136.699 213.696 119.242 228.44 118.421C237.514 117.915 256.209 122.154 258.396 143.151Z" fill="#99A77C" />
           <path d="M184.167 189.195C208.485 192.358 231.353 181.977 239.747 176.392C191.074 159.221 167.828 162.698 162.888 170.618C159.848 175.493 159.848 186.032 184.167 189.195Z" fill="#99A77C" />
@@ -292,6 +309,7 @@
         </svg>
       </section>
 
+      <!-- get in touch -->
       <section class="md:flex flex-row items-end py-[2em] md:py-[8vw] lg:px-[6vw]">
         <div class="w-full pb-[2em] md:pb-0">
           <h2 class="mb-5">Get in touch</h2>
@@ -300,14 +318,17 @@
         </div>
 
         <div class="w-full flex flex-col text-right mt-[1em]">
-          <p class="bigger mb-3 md:mb-0 text-leaf hover:text-moss fill-leaf hover:fill-moss transition-colors"><a href="mailto:hello@wellkept.com" class="email-link">hello@wellkept.com</a></p>
+          <p class="bigger mb-3 md:mb-0 text-leaf hover:text-moss fill-leaf hover:fill-moss transition-colors">
+            <a href="mailto:hello@wellkept.com" class="email-link" aria-label="Email us at hello@wellkept.com">hello@wellkept.com</a>
+          </p>
+
           <p>
-            <a href="https://wa.me/6421123456789" class="flex flex-row justify-end transition-colors text-leaf hover:text-moss fill-leaf hover:fill-moss md:pointer-events-none md:cursor-default contact-link">
-              <svg class="w-[4vw] me-1" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <a href="https://wa.me/6421123456789" class="flex flex-row justify-end transition-colors text-leaf hover:text-moss fill-leaf hover:fill-moss md:pointer-events-none md:cursor-default contact-link" aria-label="Contact us on WhatsApp at 021 123 456 789">
+              <svg class="w-[4vw] me-1" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                 <g clip-path="url(#clip0_24_29)">
                   <path
                     d="M16.61 3.35187C14.9287 1.67062 12.6063 0.630615 10.0406 0.630615C4.91 0.630615 0.75 4.78999 0.75 9.92124C0.75 11.6287 1.21062 13.2281 2.01375 14.6031L1.99 14.5594L0.671875 19.3731L5.59625 18.0812C6.87813 18.7931 8.4075 19.2119 10.035 19.2119H10.0388C15.1694 19.21 19.3275 15.05 19.3275 9.91936C19.3275 7.35499 18.2888 5.03374 16.6094 3.35249L16.61 3.35187ZM10.0388 17.6425H10.0356C8.58625 17.6425 7.22937 17.2425 6.07125 16.5469L6.10625 16.5662L5.82438 16.3994L2.9025 17.1662L3.68187 14.3169L3.49813 14.025C2.7575 12.8612 2.3175 11.4431 2.3175 9.92186C2.3175 5.65811 5.77438 2.20124 10.0381 2.20124C14.3019 2.20124 17.7587 5.65811 17.7587 9.92186C17.7587 14.1856 14.3031 17.6425 10.0388 17.6425ZM14.2737 11.8606C14.0419 11.7444 12.9006 11.1837 12.6881 11.1056C12.475 11.0281 12.32 10.99 12.165 11.2225C12.0112 11.4544 11.5662 11.9769 11.4306 12.1319C11.2956 12.2875 11.1594 12.3062 10.9275 12.1906C10.2087 11.8994 9.59125 11.5112 9.05438 11.0331L9.06062 11.0387C8.56125 10.5762 8.13313 10.0469 7.7875 9.46311L7.77 9.43061C7.635 9.19874 7.75563 9.07311 7.87125 8.95749C7.97563 8.85374 8.10375 8.68624 8.21938 8.55124C8.31063 8.43936 8.38875 8.31124 8.44813 8.17374L8.45187 8.16311C8.47875 8.10874 8.49437 8.04561 8.49437 7.97811C8.49437 7.89624 8.47125 7.81999 8.43125 7.75499L8.4325 7.75686C8.37375 7.64061 7.91 6.49811 7.71688 6.03311C7.52813 5.58061 7.33625 5.64249 7.19437 5.63499C7.05937 5.62874 6.90437 5.62749 6.74937 5.62749C6.5025 5.63374 6.28313 5.74499 6.13188 5.91686L6.13125 5.91811C5.63 6.39374 5.31875 7.06436 5.31875 7.80749C5.31875 7.82374 5.31875 7.84061 5.31937 7.85686V7.85436C5.40125 8.77124 5.745 9.59436 6.27375 10.265L6.26625 10.2556C7.26875 11.7425 8.605 12.9319 10.1731 13.7331L10.2319 13.76C10.5744 13.915 11.0131 14.0806 11.4619 14.2225L11.555 14.2481C11.8313 14.3356 12.1494 14.3862 12.4794 14.3862C12.6687 14.3862 12.855 14.3694 13.035 14.3375L13.0156 14.34C13.6838 14.2006 14.2381 13.7975 14.5762 13.2469L14.5819 13.2362C14.685 13.0075 14.745 12.7406 14.745 12.46C14.745 12.3444 14.735 12.2312 14.7156 12.1212L14.7175 12.1331C14.66 12.0362 14.505 11.9787 14.2725 11.8619L14.2737 11.8606Z"
-                    fill=""
+                    fill="currentColor"
                   />
                 </g>
                 <defs>
@@ -323,8 +344,9 @@
       </section>
     </main>
 
-    <footer class="bg-mist p-[2em] md:px-[4vw] text-moss md:flex flex-row justify-between">
-      <svg class="w-[50] md:w-[20vw]" viewBox="0 0 269 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <footer class="bg-mist p-[2em] md:px-[4vw] text-moss md:flex flex-row justify-between items-center">
+      <svg class="w-[150px] md:w-[20vw] mb-6 md:mb-0" viewBox="0 0 269 56" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="footer-logo-title">
+        <title id="footer-logo-title">Wellkept - Professional Gardening Services</title>
         <path d="M261.78 31.9786C267.633 24.7232 266.702 13.8196 265.505 9.27472C248.566 20.4846 246.103 29.4065 249.041 33.4967C250.848 36.0137 255.926 39.2339 261.78 31.9786Z" fill="#9bc349" />
         <path d="M9.72 42.96L0 12.36H8.82L14.1 32.22H14.52L20.64 12.36H28.68L34.8 32.22H35.22L40.5 12.36H49.2L39.42 42.96H30.96L24.72 23.16H24.3L18.12 42.96H9.72Z" fill="#4A5D23" />
         <path
@@ -347,18 +369,21 @@
           fill="#4A5D23"
         />
       </svg>
-      <ul class="flex flex-row justify-center md:justify-end items-center">
-        <li class="me-5">
-          <a href="/" class="hover:text-main transition-colors">Terms and Conditions</a>
-        </li>
-        <li>
-          <p>wellkept &copy; <span id="year"></span></p>
-        </li>
-      </ul>
+
+      <nav aria-label="Footer navigation">
+        <ul class="flex flex-row justify-center md:justify-end items-center">
+          <li class="me-5">
+            <a href="/terms" class="hover:text-dark transition-colors text-sm underline md:no-underline">Terms and Conditions</a>
+          </li>
+          <li>
+            <p class="text-sm">wellkept &copy; <span id="year">2026</span></p>
+          </li>
+        </ul>
+      </nav>
     </footer>
 
     <!-- repeat svgs -->
-    <svg width="0" height="0" style="position: absolute">
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true" focusable="false">
       <defs>
         <mask id="responsiveMask" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox">
           <path
