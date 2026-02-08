@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', (event) => {
   if (typeof ScrollTrigger !== 'undefined') {
-    // Ensure all 3 are registered
     gsap.registerPlugin(ScrollTrigger, MotionPathPlugin, MorphSVGPlugin)
 
     let mm = gsap.matchMedia()
 
     mm.add('(min-width: 1366px) and (any-pointer: fine)', () => {
+      // --- BIRD ANIMATION ---
       const flightTL = gsap.timeline({
         scrollTrigger: {
           trigger: '#bird-trigger',
@@ -13,15 +13,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
           start: 'center center',
           end: 'top 20%',
           scrub: 1.5,
-          //   markers: { id: 'Bird', startColor: 'blue', endColor: 'blue' },
         },
       })
 
-      const totalDuration = 2 // We define a fixed "length" for the timeline
+      const totalDuration = 2
       const totalFlaps = 10
-      const flapDuration = totalDuration / totalFlaps // Math to make them fit!
+      const flapDuration = totalDuration / totalFlaps
 
-      // 1. Flight Path - Forced to last the 'totalDuration'
       flightTL.from(
         '#bird',
         {
@@ -35,42 +33,70 @@ document.addEventListener('DOMContentLoaded', (event) => {
             curviness: 1.5,
           },
           scale: 0.2,
-          duration: totalDuration, // This is the key
+          duration: totalDuration,
           ease: 'none',
         },
         0,
       )
 
-      // 2. Morphing Flaps - Distributed across the same duration
       for (let i = 0; i < totalFlaps; i++) {
         flightTL.to(
           '#bird path',
           {
             morphSVG: '#wing-down-path',
-            duration: flapDuration / 2, // Divided by 2 because of yoyo
+            duration: flapDuration / 2,
             yoyo: true,
             repeat: 1,
             ease: 'sine.inOut',
           },
           i * flapDuration,
-        ) // Starts each flap at exactly the right interval
+        )
       }
 
-      // 3. Leaf Animation
-      gsap.from('#work-leaf', {
+      // --- LEAF ANIMATION ---
+      const startPaths = gsap.utils.toArray('#work-leaf path')
+      const endPaths = gsap.utils.toArray('#end-leaf path')
+
+      const leafTL = gsap.timeline({
         scrollTrigger: {
           trigger: '#work-leaf-trigger',
           id: 'Work Leaf',
           start: '20% top',
           end: 'bottom bottom',
           scrub: true,
-          //   markers: { startColor: 'orange', endColor: 'orange' },
         },
-        y: '-80vh',
-        rotate: -120,
-        force3D: true,
-        ease: 'none',
       })
-    })
-  }
-})
+
+      leafTL.from(
+        '#work-leaf',
+        {
+          y: '-80vh',
+          rotate: -120,
+          force3D: true,
+          ease: 'none',
+        },
+        0,
+      )
+
+      startPaths.forEach((path, i) => {
+        // Safety check: only morph if a corresponding end path exists
+        if (endPaths[i]) {
+          leafTL.to(
+            path,
+            {
+              morphSVG: endPaths[i],
+              ease: 'none',
+            },
+            0,
+          )
+        }
+      })
+
+      // Optional: Cleanup
+      return () => {
+        flightTL.kill()
+        leafTL.kill()
+      }
+    }) // End mm.add
+  } // End ScrollTrigger check
+}) // End DOMContentLoaded
