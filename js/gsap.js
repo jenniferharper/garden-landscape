@@ -138,10 +138,56 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
       })
 
-      // Optional: Cleanup
+      // --- vine animation2 ---
+      const startPathsVineOther = gsap.utils.toArray('#start-leaf-other path')
+      const endPathsVineOther = gsap.utils.toArray('#leaf-end-other path')
+      const vineOtherTL = gsap.timeline({
+        scrollTrigger: {
+          trigger: '#vine-trigger-other',
+          id: 'start-leaf-animation-other',
+          start: '-20% top',
+          end: 'bottom center',
+          scrub: 1.5,
+        },
+      })
+
+      startPathsVineOther.forEach((path, i) => {
+        if (endPathsVineOther[i]) {
+          const isLeaf = path.hasAttribute('fill')
+          const isStalk = path.hasAttribute('stroke')
+
+          if (isLeaf) {
+            vineOtherTL.to(
+              path,
+              {
+                morphSVG: endPathsVineOther[i],
+                fill: '#6D7A54',
+                ease: 'none',
+              },
+              0,
+            )
+          } else if (isStalk) {
+            // FIX: Changed vineTL to vineOtherTL
+            vineOtherTL.to(
+              path,
+              {
+                morphSVG: endPathsVineOther[i],
+                fill: 'none',
+                stroke: '#9BC349',
+                ease: 'none',
+              },
+              0,
+            )
+          }
+        }
+      })
+
+      // Final Cleanup update
       return () => {
         flightTL.kill()
         leafTL.kill()
+        vineTL.kill() // Added
+        vineOtherTL.kill() // Added
       }
     }) // End mm.add
   } // End ScrollTrigger check
