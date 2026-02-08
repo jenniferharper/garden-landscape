@@ -193,6 +193,15 @@
   .right-\[-9vw\] {
     right: -9vw;
   }
+  .bottom-0 {
+    bottom: calc(var(--spacing) * 0);
+  }
+  .bottom-\[-5\%\] {
+    bottom: -5%;
+  }
+  .bottom-\[-10\%\] {
+    bottom: -10%;
+  }
   .bottom-\[-20vw\] {
     bottom: -20vw;
   }
@@ -291,6 +300,9 @@
   }
   .w-\[50\] {
     width: 50;
+  }
+  .w-\[110\%\] {
+    width: 110%;
   }
   .w-full {
     width: 100%;

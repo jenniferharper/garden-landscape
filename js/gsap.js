@@ -53,6 +53,52 @@ document.addEventListener('DOMContentLoaded', (event) => {
         )
       }
 
+      // --- vine animation ---
+
+      const startPathsVine = gsap.utils.toArray('#start-leaf path')
+      const endPathsVine = gsap.utils.toArray('#leaf-end path')
+      const vineTL = gsap.timeline({
+        scrollTrigger: {
+          trigger: '#vine-trigger',
+          id: 'start-leaf-animation',
+          start: '-20% top',
+          end: 'bottom center',
+          scrub: 1.5,
+        },
+      })
+
+      startPathsVine.forEach((path, i) => {
+        if (endPathsVine[i]) {
+          const isLeaf = path.hasAttribute('fill')
+          const isStalk = path.hasAttribute('stroke')
+
+          if (isLeaf) {
+            // Morph shape AND change color
+            vineTL.to(
+              path,
+              {
+                morphSVG: endPathsVine[i],
+                fill: '#6D7A54',
+                ease: 'none',
+              },
+              0,
+            )
+          } else if (isStalk) {
+            // Morph shape but keep it a stroke (no fill)
+            vineTL.to(
+              path,
+              {
+                morphSVG: endPathsVine[i],
+                fill: 'none', // Force no fill
+                stroke: '#9BC349', // Keep original stroke color
+                ease: 'none',
+              },
+              0,
+            )
+          }
+        }
+      })
+
       // --- LEAF ANIMATION ---
       const startPaths = gsap.utils.toArray('#work-leaf path')
       const endPaths = gsap.utils.toArray('#end-leaf path')
