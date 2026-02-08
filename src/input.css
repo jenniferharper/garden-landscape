@@ -3,10 +3,10 @@
 
 @theme {
   --color-main: #fcfcf5;
-  --color-dark: #222224;
+  --color-dark: #2f3b16;
   --color-leaf: #9bc349; /* Fresh primary green */
   --color-moss: #4a5d23; /* Darker, earthy accent */
-  --color-mist: #c4ceb1; /* Very light green-tinted background */
+  --color-mist: #e3ead4; /* Very light green-tinted background */
 }
 
 @layer base {
@@ -31,11 +31,10 @@
   p {
     /* Fluid body text is often better than "snapping" it */
     font-size: clamp(1rem, 0.5vw + 0.8rem, 1.5rem);
-    line-height: 1.6;
+    line-height: 1.4;
   }
   .bigger {
     font-size: clamp(1.5rem, 0.7vw + 0.9rem, 2rem);
-    line-height: 2;
   }
 
   /* Specific 4K adjustment if you want to change more than just size */
@@ -53,7 +52,7 @@
 
 body {
   background-color: var(--color-main);
-  color: var(--main-dark);
+  color: var(--color-dark);
   font-family: 'Google Sans', sans-serif;
 }
 main {
@@ -108,6 +107,9 @@ section {
 .swiper {
   width: 100%;
   height: 100%;
+}
+.swiper-pagination-bullet-active {
+  background-color: var(--color-moss);
 }
 
 /* after-section background block */
