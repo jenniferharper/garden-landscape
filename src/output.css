@@ -193,14 +193,8 @@
   .right-\[-9vw\] {
     right: -9vw;
   }
-  .bottom-0 {
-    bottom: calc(var(--spacing) * 0);
-  }
   .bottom-\[-5\%\] {
     bottom: -5%;
-  }
-  .bottom-\[-10\%\] {
-    bottom: -10%;
   }
   .bottom-\[-20vw\] {
     bottom: -20vw;
@@ -455,6 +449,11 @@
       }
     }
   }
+  .md\:pointer-events-none {
+    @media (width >= 48rem) {
+      pointer-events: none;
+    }
+  }
   .md\:top-0 {
     @media (width >= 48rem) {
       top: calc(var(--spacing) * 0);
@@ -578,6 +577,11 @@
   .md\:rotate-\[-25deg\] {
     @media (width >= 48rem) {
       rotate: -25deg;
+    }
+  }
+  .md\:cursor-default {
+    @media (width >= 48rem) {
+      cursor: default;
     }
   }
   .md\:flex-row {
