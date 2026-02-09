@@ -90,7 +90,7 @@
 
           <div class="w-full flex flex-col items-end relative">
             <div class="container-arch max-w-[90vw] lg:max-w-[80%] relative">
-              <img src="img/from_street.webp" alt="Wellkept garden landscape viewed from the street" class="masked-element w-full h-auto" loading="eager" fetchpriority="high" />
+              <img src="img/from_street.webp" data-gallery="lightbox" alt="Wellkept garden landscape viewed from the street" class="masked-element w-full h-auto" loading="eager" fetchpriority="high" />
 
               <svg id="start-leaf" class="w-[110%] absolute bottom-[-5%] left-0 pointer-events-none" viewBox="0 0 560 341" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                 <path d="M489.821 64.9706C466.795 81.1713 459.823 109.439 459.216 121.547C517.219 99.6981 532.085 77.868 527.348 66.2214C524.434 59.0542 512.848 48.77 489.821 64.9706Z" fill="#99A77C" />
@@ -170,7 +170,7 @@
       </section>
 
       <!-- recent work -->
-      <section class="bg-mist md:flex flex-col p-[2em] py-[6em] md:pt-[15vw] md:px-[5vw] md:pb-[10vw] lg:pt-[12vw] xl:pt-[8vw] after-section text-pretty" id="work-leaf-trigger">
+      <section id="recent-work" class="bg-mist md:flex flex-col p-[2em] py-[6em] md:pt-[15vw] md:px-[5vw] md:pb-[10vw] lg:pt-[12vw] xl:pt-[8vw] after-section text-pretty" id="work-leaf-trigger">
         <div class="md:flex flex-row items-center">
           <div class="w-full pb-[2em] md:pe-[4vw] md:pb-0 lg:pe-[2vw]">
             <h2 class="mb-[1em] md:mb-[1vw]">Recent work</h2>
@@ -179,7 +179,7 @@
 
           <div class="w-full flex flex-col lg:items-end">
             <div class="container-arch max-w-[90vw] lg:max-w-[80%] md:mt-[-25vh] mb-[1em] lg:mt-[-30vh] xl:mt-[-30vh]">
-              <img src="img/from_street.webp" alt="Description" class="masked-element" />
+              <img src="img/from_street.webp" data-gallery="lightbox" alt="Description" class="masked-element" />
             </div>
             <p>Full clean up and refresh, Ngaio 2025</p>
           </div>
@@ -188,13 +188,13 @@
         <div class="md:flex flex-row mt-[2em] lg:mt-0">
           <div class="w-full md:w-[55%] xl:w-[50%] flex flex-col lg:items-end md:pe-[3vw]">
             <div class="container-arch max-w-[90vw] lg:max-w-[95%]">
-              <img src="img/from_street.webp" alt="Description" class="masked-element" />
+              <img src="img/from_street.webp" data-gallery="lightbox" alt="Description" class="masked-element" />
             </div>
           </div>
 
           <div class="w-full md:w-[30%] flex flex-col lg:items-start justify-end mt-[3em] md:mt-0">
             <div class="container-arch max-w-[90vw] md:max-w-full lg:max-w-[80%] mb-[1em]">
-              <img src="img/IMG_0339.webp" alt="Description" class="masked-element" />
+              <img src="img/IMG_0339.webp" data-gallery="lightbox" alt="Description" class="masked-element" />
             </div>
             <p>Full clean up and refresh, Ngaio 2025</p>
           </div>
@@ -268,7 +268,7 @@
 
           <div class="w-full flex flex-col items-end">
             <div class="container-arch max-w-[90vw] lg:max-w-[80%] relative">
-              <img src="img/from_street.webp" alt="Description" class="masked-element" />
+              <img src="img/from_street.webp" data-gallery="lightbox" alt="Description" class="masked-element" />
               <svg id="start-leaf-other" class="w-[110%] absolute bottom-[-5%] right-0" viewBox="0 0 560 341" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="presentation">
                 <path d="M68.4702 64.9706C91.4968 81.1713 98.4685 109.439 99.076 121.547C41.0725 99.6981 26.2069 77.868 30.9431 66.2214C33.8577 59.0542 45.4435 48.77 68.4702 64.9706Z" fill="#99A77C" />
                 <path d="M211.1 169.455C213.932 186.145 200.121 199.314 192.861 203.812C173.822 168.357 179.134 153.632 189.121 151.862C195.268 150.772 208.268 152.766 211.1 169.455Z" fill="#99A77C" />
@@ -401,6 +401,16 @@
         </mask>
       </defs>
     </svg>
+
+    <div id="lightbox" class="fixed inset-0 z-100 bg-black/90 flex flex-col items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
+      <button id="close-lightbox" class="absolute top-10 right-10 text-white text-4xl hover:text-leaf z-110">&times;</button>
+
+      <div class="swiper lightbox-swiper w-full h-[80vh]">
+        <div class="swiper-wrapper"></div>
+        <div class="swiper-button-next text-main!"></div>
+        <div class="swiper-button-prev text-main!"></div>
+      </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
