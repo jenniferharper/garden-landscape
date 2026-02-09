@@ -47,37 +47,37 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // --- Handle WhatsApp/Contact Links ---
   // We've removed the desktop restriction so WhatsApp works everywhere
-  const contactLinks = document.querySelectorAll('.contact-link')
-  const phoneNum = '6421123456789'
+  //   const contactLinks = document.querySelectorAll('.contact-link')
+  //   const phoneNum = '6421123456789'
 
-  contactLinks.forEach((link) => {
-    // A11y: Standard label for all platforms
-    link.setAttribute('aria-label', `Contact us on WhatsApp at ${phoneNum}`)
+  //   contactLinks.forEach((link) => {
+  //     // A11y: Standard label for all platforms
+  //     link.setAttribute('aria-label', `Contact us on WhatsApp at ${phoneNum}`)
 
-    // Ensure it's interactive
-    link.removeAttribute('inert')
-    link.setAttribute('tabindex', '0')
-    link.style.cursor = 'pointer'
+  //     // Ensure it's interactive
+  //     link.removeAttribute('inert')
+  //     link.setAttribute('tabindex', '0')
+  //     link.style.cursor = 'pointer'
 
-    // We no longer need the 'if (isMobile)' failover logic.
-    // The link in your HTML (https://wa.me/...) will now work natively.
-    // If you want to keep the "automatic phone call" failover on mobile only:
-    link.addEventListener('click', function (e) {
-      if (window.innerWidth < 768) {
-        // Optional mobile-only behavior: try WhatsApp, then phone
-        const whatsappUrl = `https://wa.me/${phoneNum}`
-        const telUrl = `tel:${phoneNum}`
+  //     // We no longer need the 'if (isMobile)' failover logic.
+  //     // The link in your HTML (https://wa.me/...) will now work natively.
+  //     // If you want to keep the "automatic phone call" failover on mobile only:
+  //     link.addEventListener('click', function (e) {
+  //       if (window.innerWidth < 768) {
+  //         // Optional mobile-only behavior: try WhatsApp, then phone
+  //         const whatsappUrl = `https://wa.me/${phoneNum}`
+  //         const telUrl = `tel:${phoneNum}`
 
-        window.location.href = whatsappUrl
+  //         window.location.href = whatsappUrl
 
-        setTimeout(function () {
-          if (document.hasFocus()) {
-            window.location.href = telUrl
-          }
-        }, 1000) // Slightly longer delay to allow Desktop app prompts to fire
-        e.preventDefault()
-      }
-      // On Desktop, the default link behavior takes over (opens WhatsApp Web/App)
-    })
-  })
+  //         setTimeout(function () {
+  //           if (document.hasFocus()) {
+  //             window.location.href = telUrl
+  //           }
+  //         }, 1000) // Slightly longer delay to allow Desktop app prompts to fire
+  //         e.preventDefault()
+  //       }
+  //       // On Desktop, the default link behavior takes over (opens WhatsApp Web/App)
+  //     })
+  //   })
 })
