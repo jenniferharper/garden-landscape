@@ -18,69 +18,66 @@ document.addEventListener('DOMContentLoaded', function () {
   const yearEl = document.getElementById('year')
   if (yearEl) yearEl.textContent = new Date().getFullYear()
 
-  // Handle copy email
+  // --- Handle copy email ---
   const emailLinks = document.querySelectorAll('.email-link')
 
   emailLinks.forEach((link) => {
-    // 1. Handle Manual Copy (Long-press -> Copy)
+    // 1. Handle Manual Copy (Long-press/Selection -> Copy)
     link.addEventListener('copy', (e) => {
-      e.preventDefault()
-      // Get only the text content, ignore the mailto: in the href
       const cleanEmail = link.textContent.trim()
       if (e.clipboardData) {
         e.clipboardData.setData('text/plain', cleanEmail)
+        e.preventDefault()
       }
     })
 
-    // 2. Handle Click/Tap (Optional: provides "Copied" feedback + stays a link)
+    // 2. Handle Click/Tap (Copied feedback + trigger mailto)
     link.addEventListener('click', function (e) {
-      // We let the default mailto: happen, but we also copy the clean version
       const cleanEmail = link.textContent.trim()
-      navigator.clipboard.writeText(cleanEmail)
 
-      // Provide visual feedback
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(cleanEmail)
+      }
+
+      // Visual feedback
       link.classList.add('copied')
       setTimeout(() => link.classList.remove('copied'), 2000)
-
-      // Default mailto behavior continues...
     })
   })
 
-  // Handle multiple contact links
-  ;(function () {
-    const contactLinks = document.querySelectorAll('.contact-link')
-    const phoneNum = '6421123456789'
-    const isMobile = window.innerWidth < 768
+  // --- Handle WhatsApp/Contact Links ---
+  // We've removed the desktop restriction so WhatsApp works everywhere
+  const contactLinks = document.querySelectorAll('.contact-link')
+  const phoneNum = '6421123456789'
 
-    contactLinks.forEach((link) => {
-      if (isMobile) {
-        // A11y: Tell screen readers what this link does
-        link.setAttribute('aria-label', `Chat on WhatsApp or call ${phoneNum}`)
+  contactLinks.forEach((link) => {
+    // A11y: Standard label for all platforms
+    link.setAttribute('aria-label', `Contact us on WhatsApp at ${phoneNum}`)
 
-        link.addEventListener('click', function (e) {
-          e.preventDefault()
+    // Ensure it's interactive
+    link.removeAttribute('inert')
+    link.setAttribute('tabindex', '0')
+    link.style.cursor = 'pointer'
 
-          const whatsappUrl = `https://wa.me/${phoneNum}`
-          const telUrl = `tel:${phoneNum}`
+    // We no longer need the 'if (isMobile)' failover logic.
+    // The link in your HTML (https://wa.me/...) will now work natively.
+    // If you want to keep the "automatic phone call" failover on mobile only:
+    link.addEventListener('click', function (e) {
+      if (window.innerWidth < 768) {
+        // Optional mobile-only behavior: try WhatsApp, then phone
+        const whatsappUrl = `https://wa.me/${phoneNum}`
+        const telUrl = `tel:${phoneNum}`
 
-          // 1. Try to open WhatsApp
-          window.location.href = whatsappUrl
+        window.location.href = whatsappUrl
 
-          // 2. Fail-over timer
-          setTimeout(function () {
-            if (document.hasFocus()) {
-              window.location.href = telUrl
-            }
-          }, 500)
-        })
-      } else {
-        // Desktop: Completely disable interaction and hide from screen readers
-        link.href = '#'
-        link.style.cursor = 'default'
-        link.setAttribute('tabindex', '-1') // Prevents keyboard focus
-        link.setAttribute('aria-hidden', 'true') // Hides from screen readers
-        link.addEventListener('click', (e) => e.preventDefault())
+        setTimeout(function () {
+          if (document.hasFocus()) {
+            window.location.href = telUrl
+          }
+        }, 1000) // Slightly longer delay to allow Desktop app prompts to fire
+        e.preventDefault()
       }
+      // On Desktop, the default link behavior takes over (opens WhatsApp Web/App)
     })
-  })()
+  })
 })

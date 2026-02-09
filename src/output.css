@@ -240,11 +240,17 @@
   .my-\[3em\] {
     margin-block: 3em;
   }
+  .ms-5 {
+    margin-inline-start: calc(var(--spacing) * 5);
+  }
   .ms-\[1em\] {
     margin-inline-start: 1em;
   }
   .me-1 {
     margin-inline-end: calc(var(--spacing) * 1);
+  }
+  .me-2 {
+    margin-inline-end: calc(var(--spacing) * 2);
   }
   .me-5 {
     margin-inline-end: calc(var(--spacing) * 5);
@@ -294,8 +300,17 @@
   .h-auto {
     height: auto;
   }
+  .w-4 {
+    width: calc(var(--spacing) * 4);
+  }
   .w-5 {
     width: calc(var(--spacing) * 5);
+  }
+  .w-6 {
+    width: calc(var(--spacing) * 6);
+  }
+  .w-7\.5 {
+    width: calc(var(--spacing) * 7.5);
   }
   .w-\[4vw\] {
     width: 4vw;
@@ -308,6 +323,9 @@
   }
   .w-\[30\%\] {
     width: 30%;
+  }
+  .w-\[30px\] {
+    width: 30px;
   }
   .w-\[50\] {
     width: 50;
@@ -347,6 +365,9 @@
   }
   .content-center {
     align-content: center;
+  }
+  .content-end {
+    align-content: flex-end;
   }
   .items-center {
     align-items: center;
@@ -401,6 +422,24 @@
   }
   .py-\[25vh\] {
     padding-block: 25vh;
+  }
+  .ps-2 {
+    padding-inline-start: calc(var(--spacing) * 2);
+  }
+  .ps-5 {
+    padding-inline-start: calc(var(--spacing) * 5);
+  }
+  .pe-2 {
+    padding-inline-end: calc(var(--spacing) * 2);
+  }
+  .pe-3 {
+    padding-inline-end: calc(var(--spacing) * 3);
+  }
+  .pe-4 {
+    padding-inline-end: calc(var(--spacing) * 4);
+  }
+  .pe-5 {
+    padding-inline-end: calc(var(--spacing) * 5);
   }
   .pb-\[2em\] {
     padding-bottom: 2em;
