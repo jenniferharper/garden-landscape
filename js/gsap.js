@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       leafTL.from(
         '#work-leaf',
         {
-          y: '-80vh',
+          top: '-60%',
           rotate: -120,
           force3D: true,
           ease: 'none',

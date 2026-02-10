@@ -10,7 +10,8 @@
 }
 
 @layer base {
-  h1 {
+  h1,
+  .h1-style {
     font-size: clamp(3rem, 9vw, 16rem);
     font-weight: 800;
     line-height: 1.1;
@@ -28,7 +29,8 @@
     line-height: 1.1;
   }
 
-  p {
+  p,
+  .p-style {
     /* Fluid body text is often better than "snapping" it */
     font-size: clamp(1rem, 0.5vw + 0.8rem, 1.5rem);
     line-height: 1.4;
@@ -111,6 +113,7 @@ section {
 }
 .swiper-pagination-bullet-active {
   background-color: var(--color-moss) !important;
+  z-index: 1000;
 }
 
 /* after-section background block */
